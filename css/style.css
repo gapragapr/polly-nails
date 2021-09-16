@@ -413,7 +413,7 @@ footer p{
     }
     .hamburger{
         display: flex;
-        position: fixed;
+        position: static;
     }
     .bar1, .bar2, .bar3{
         background-color: #fff;
@@ -474,6 +474,31 @@ footer p{
         position: static;
         width: 100%;
     }
+}
+.hamburger-menu{
+    font-size: 22px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    height: 200px;
+    width: 100vw;
+    background-color: #aeaede;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: .5s;
+}
+.hamburger-menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.hamburger-menu li{
+    margin: 15px 0;
+}
+.hamburger-menu a{
+    text-decoration: none;
+    color: #374372;
 }
 @media screen and (max-width: 639px){
     .header-container{
@@ -602,6 +627,14 @@ footer p{
     }
     .popup{
         width: 100vw;
+    }
+    .hamburger-menu{
+        display: flex;
+        position: absolute;
+        top: 50px;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
     }
 }
 @media screen and (max-width: 360px) {

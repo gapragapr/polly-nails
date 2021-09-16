@@ -8,23 +8,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <title>Polly Nails</title>
 </head>
 <body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+           $("#menu",).on("click","a", function (event) {
+               event.preventDefault();
+               var id  = $(this).attr('href'),
+                   top = $(id).offset().top;
+               $('body,html').animate({scrollTop: top}, 1000);
+           });
+       });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+           $("#hamburger-menu",).on("click","a", function (event) {
+               event.preventDefault();
+               var id  = $(this).attr('href'),
+                   top = $(id).offset().top;
+               $('body,html').animate({scrollTop: top}, 1000);
+           });
+       });
+    </script>
     <div class="wrapper">
         <div class="header-container">
             <header id="main">
                 <div class="header-row first-row">
-                    <nav class="header-navigation">
+                    <nav id="menu" class="header-navigation">
                         <ul>
                             <li><a href="#main">Главная</a></li>
                             <li><a href="#works">Примеры</a></li>
-                            <li><a href="#actions">Акции</a></li>
                             <li><a href="#about">Обо мне</a></li>
+                            <li><a href="#actions">Акции</a></li>
                             <li><a onclick="popupOpen()" href="#contacts">Контакты</a></li>
                         </ul>
                     </nav>
-                    <div class="hamburger">
+                    <div onclick="hamburgerOpen()" class="hamburger">
                         <div class="bar1"></div>
                         <div class="bar2"></div>
                         <div class="bar3"></div>
@@ -195,6 +216,15 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div id="hamburger-menu" onclick="hamburgerOpen(false)" class="hamburger-menu">
+        <ul>
+            <li><a href="#main">Главная</a></li>
+            <li><a href="#works">Примеры</a></li>
+            <li><a href="#about">Обо мне</a></li>
+            <li><a href="#actions">Акции</a></li>
+            <li><a onclick="popupOpen()" href="#contacts">Контакты</a></li>
+        </ul>
     </div>
 </body>
 </html>
